@@ -1,11 +1,18 @@
 from flask import Flask
 
+from models import db, Men
+from routes import api
+
 app = Flask(__name__)
+app.register_blueprint(api)
+db.init_app(app)
 
+with app.app_context():
+  db.create_all(app=app)
+  db.session.add(Men(name='Bod'))
+  db.session.add(Men(name='Rocky'))
+  db.session.commit()
 
-@app.route('/')
-def hello():
-    return 'Hello word'
 
 if __name__ == '__main__':
   app.run()
