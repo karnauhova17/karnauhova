@@ -23,9 +23,10 @@ def put_men(men_name):
     db.session.commit()
     return jsonify(men.json())
 
+
 @api.route('/')
 @api.route('/index')
-def index():
+def get_index():
     return '''
         <html>
             <title>
