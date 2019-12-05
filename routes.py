@@ -24,8 +24,8 @@ def put_men(men_name):
     return jsonify(men.json())
 
 
-@api.route('/')
-@api.route('/index')
+@index.route('/')
+@index.route('/index')
 def get_index():
     return '''
         <html>
