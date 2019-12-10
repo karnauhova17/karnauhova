@@ -38,7 +38,7 @@ with app.app_context():
 
     # Посещения:
      visit = Visit(client_id =  clientKatya.id, mentor_id = mentorVasya.id, trainingtype_id=singleTraining.id, visit_date=datetime.datetime.now())
-    visit = Visit(client_id =  clientAnna2.id, mentor_id = mentorAndrey2.id, trainingtype_id=singleTraining.id, visit_date=datetime.datetime.now())
+    visit2 = Visit(client_id =  clientAnna2.id, mentor_id = mentorAndrey2.id, trainingtype_id=singleTraining.id, visit_date=datetime.datetime.now())
     db.session.add(visit)
     db.session.commit()
 
