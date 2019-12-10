@@ -21,11 +21,11 @@ with app.app_context():
     db.session.add(aerobicsTraining)
 
     # Клиенты:
-    clientKatya = Client(fio='Ekaterina A. A.')
+    clientKatya = Client(firstname='Ekaterina', lastname='Petrova', patronymic='Alexandrovna')
     db.session.add(clientKatya)
 
     # Тренеры:
-    mentorVasya = Mentor(fio='Vasiliy E. T.')
+    mentorVasya = Mentor(firstname='Vasiliy', lastname='Pavlov', patronymic='Petrovich')
     db.session.add(mentorVasya)
 
     # Сохраним типы тренировок, клиентов и тренеров:

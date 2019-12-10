@@ -7,19 +7,23 @@ db = SQLAlchemy()
 class Client(db.Model):
     __tablename__ = 'client'
     id = db.Column(db.Integer, primary_key=True)
-    fio = db.Column(db.String(120))
+    firstname = db.Column(db.String(120))
+    lastname = db.Column(db.String(120))
+    patronymic = db.Column(db.String(120))
 
     def json(self):
-        return {"id": self.id, "fio": self.fio}
+        return {"id": self.id, "firstname": self.firstname, "lastname": self.lastname, "patronymic": self.patronymic}
 
 
 class Mentor(db.Model):
     __tablename__ = 'mentor'
     id = db.Column(db.Integer, primary_key=True)
-    fio = db.Column(db.String(120))
+    firstname = db.Column(db.String(120))
+    lastname = db.Column(db.String(120))
+    patronymic = db.Column(db.String(120))
 
     def json(self):
-        return {"id": self.id, "fio": self.fio}
+        return {"id": self.id, "firstname": self.firstname, "lastname": self.lastname, "patronymic": self.patronymic}
 
 
 class TrainingType(db.Model):
