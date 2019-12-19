@@ -25,6 +25,8 @@ with app.app_context():
     db.session.add(clientKatya)
     clientAnna2 = Client(firstname='Anna', lastname='Ivanova', patronymic='Andreevna')
     db.session.add(clientAnna2)
+    clientNastya = Client(firstname='Nastya', lastname='Bobova', patronymic='Vladimirovna')
+    db.session.add(clientNastya)
 
 
     # Тренеры:
@@ -32,6 +34,8 @@ with app.app_context():
     db.session.add(mentorVasya)
     mentorAndrey2 = Mentor(firstname='Andrey', lastname='Istomin', patronymic='Ivanov')
     db.session.add( mentorAndrey2)
+    mentorIlya = Mentor(firstname='Ilya', lastname='Korshunov', patronymic='Vasilyev')
+    db.session.add( mentorIlya)
 
     # Сохраним типы тренировок, клиентов и тренеров:
     db.session.commit()
@@ -39,8 +43,10 @@ with app.app_context():
     # Посещения:
     visit = Visit(client_id =  clientKatya.id, mentor_id = mentorVasya.id, trainingtype_id=singleTraining.id, visit_date=datetime.datetime.now())
     visit2 = Visit(client_id =  clientAnna2.id, mentor_id = mentorAndrey2.id, trainingtype_id=singleTraining.id, visit_date=datetime.datetime.now())
+    visit3 = Visit(client_id =  clientNastya.id, mentor_id = mentorIlya.id, trainingtype_id=singleTraining.id, visit_date=datetime.datetime.now())
     db.session.add(visit)
     db.session.add(visit2)
+    db.session.add(visit3)
     db.session.commit()
 
 if __name__ == '__main__':
